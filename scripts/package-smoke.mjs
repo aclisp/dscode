@@ -125,7 +125,7 @@ try {
   const rpcProbe = [
     'import { createDSCodeRpcClient } from "@aclisp/dsagent-core/rpc";',
     'import { DSCODE_VERSION } from "@aclisp/dsagent-core";',
-    "const providers = [['deepseek', 'deepseek-v4-flash'], ['openai', 'gpt-5.6-sol'], ['openai-codex', 'gpt-5.6-sol']];",
+    "const providers = [['deepseek', 'deepseek-flash'], ['openai', 'gpt-5.6-sol'], ['openai-codex', 'gpt-5.6-sol']];",
     "for (const [provider, model] of providers) {",
     '  const client = createDSCodeRpcClient({ provider, model, cwd: process.cwd(), args: ["--no-session", "--no-approve"] });',
     "  await client.start();",

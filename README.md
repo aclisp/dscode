@@ -132,7 +132,7 @@ The selected provider and model are saved for later runs. Override them at any t
 
 ```bash
 dscode --provider openai-codex --model gpt-5.6-sol -C /path/to/project
-dscode --provider deepseek --model deepseek-v4-flash -C /path/to/project
+dscode --provider deepseek --model deepseek-flash -C /path/to/project
 ```
 
 DSCode keeps all of its global state under `~/.dscode`:
@@ -178,7 +178,7 @@ should use the portable `.agents/skills/` convention.
 Fresh installations use:
 
 ```text
-model       deepseek-v4-flash
+model       deepseek-flash
 transport   responses
 thinking    max
 harness     minimal

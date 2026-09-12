@@ -125,7 +125,7 @@ dscode login opencode-go   # OpenCode Zen Go API key
 
 ```bash
 dscode --provider openai-codex --model gpt-5.6-sol -C /path/to/project
-dscode --provider deepseek --model deepseek-v4-flash -C /path/to/project
+dscode --provider deepseek --model deepseek-flash -C /path/to/project
 ```
 
 DSCode 的全局数据统一保存在 `~/.dscode`：
@@ -169,7 +169,7 @@ DSCode 的全局数据统一保存在 `~/.dscode`：
 全新安装使用：
 
 ```text
-model       deepseek-v4-flash
+model       deepseek-flash
 transport   responses
 thinking    max
 harness     minimal
