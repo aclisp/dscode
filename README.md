@@ -51,17 +51,17 @@ ecosystems; DSCode is smaller, DeepSeek-first, locally controlled, and MIT-licen
 
 ## Quick start
 
-### End users: Docker
+### End users: CLI
 
-The supported end-user distribution is the public Docker Hub image. Pull the current stable image:
+Run the one-click installer. It installs the source into `~/.local/share/dscode`, builds it, and puts
+a `dscode` launcher into `~/.local/bin`. Prerequisites are handled automatically: Node.js 22.19+
+(required), pnpm via corepack, and ripgrep (best-effort); Git must be present.
 
 ```bash
-docker pull docker.io/aclisp/dsagent:latest
+curl -fsSL https://raw.githubusercontent.com/aclisp/dsagent/main/scripts/install.sh | sh
 ```
 
-For a reproducible deployment, pin `DSCODE_IMAGE` to `docker.io/aclisp/dsagent:0.9.4` or an image digest.
-The Compose templates and deployment instructions are in
-[deploy/cloud/dscode](deploy/cloud/dscode/README.md).
+Then follow [Terminal app](#terminal-app) for login and first run.
 
 ### Developers: source setup
 
@@ -74,6 +74,13 @@ pnpm check
 ```
 
 The repository's npm packages are private workspace packages and are not currently published to npm.
+
+## Web UI (chat server)
+
+DSCode also ships a self-hosted web chat server in `packages/web-ui`. The public Docker Hub image
+(`docker.io/aclisp/dsagent`) packages this server for cloud deployment. Run and configure it via the
+[web UI README](packages/web-ui/README.md); Compose templates and deployment instructions are in
+[deploy/cloud/dscode](deploy/cloud/dscode/README.md).
 
 ## Terminal app
 

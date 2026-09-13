@@ -47,16 +47,17 @@ DSCode 不追求在功能数量上超过所有通用 coding agent；目标是保
 
 ## 快速开始
 
-### 最终用户：Docker
+### 最终用户：CLI
 
-最终用户支持的分发方式是公开的 Docker Hub 镜像。拉取当前稳定镜像：
+运行一键安装脚本。脚本会把 DSCode 源码安装到 `~/.local/share/dscode`，完成构建，并把 `dscode`
+启动器放入 `~/.local/bin`。前置依赖会自动处理：Node.js 22.19+（必需）、pnpm（经 corepack）以及
+ripgrep（尽力安装）；需要已有 Git。
 
 ```bash
-docker pull docker.io/aclisp/dsagent:latest
+curl -fsSL https://raw.githubusercontent.com/aclisp/dsagent/main/scripts/install.sh | sh
 ```
 
-如需可复现部署，请将 `DSCODE_IMAGE` 固定为 `docker.io/aclisp/dsagent:0.9.4` 或镜像 digest。
-Compose 模板和部署说明见 [deploy/cloud/dscode](deploy/cloud/dscode/README.md)。
+安装完成后参见[终端应用](#终端应用)完成登录和首次运行。
 
 ### 开发者：源码设置
 
@@ -69,6 +70,13 @@ pnpm check
 ```
 
 仓库中的 npm 包是私有 workspace 包，目前不会发布到 npm。
+
+## Web UI（聊天服务器）
+
+DSCode 还内置自托管的 Web 聊天服务器（`packages/web-ui`）。公开的 Docker Hub 镜像
+（`docker.io/aclisp/dsagent`）即为该服务器的云部署打包。运行与配置见
+[web UI README](packages/web-ui/README.md)；Compose 模板与部署说明见
+[deploy/cloud/dscode](deploy/cloud/dscode/README.md)。
 
 ## 终端应用
 
