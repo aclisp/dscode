@@ -307,7 +307,13 @@ pnpm dev -C /path/to/project
   执行前可能会先构建 workspace 子包。
 - `pnpm check` 是 CI/发布门禁：构建生产产物、检查测试代码类型、运行完整测试并执行 package smoke
   检查。
-- `pnpm dev` 从源码启动 CLI；`pnpm start` 启动 `dist/` 中已经构建好的 CLI。
+- `pnpm dev` 从源码启动 CLI；`pnpm start` 启动 `dist/bundle/cli.js` 中的打包版本，
+  安装后的 `dscode` 命令也使用该入口。
+
+原有未打包 CLI 保留在 `dist/cli.js`，可通过 `pnpm start:unbundled` 或
+`node dist/cli.js` 启动，用于调试或对比。两个版本使用相同的设置、凭证、会话和运行逻辑。
+CLI 将 pi 的 JavaScript 依赖一起打包以加快交互启动，原生模块和资源文件仍由安装的依赖提供。
+详见 [CLI 打包说明](docs/CLI_BUNDLING.md)。
 
 其他验证命令：
 

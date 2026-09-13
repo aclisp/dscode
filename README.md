@@ -343,7 +343,14 @@ The root package exposes a small set of primary commands:
   first because cross-package type entrypoints are generated under `dist/`.
 - `pnpm check` is the CI/release gate: it builds production artifacts, checks test types, runs the
   full test suite, and performs package smoke checks.
-- `pnpm dev` runs the CLI from source; `pnpm start` runs the built CLI from `dist/`.
+- `pnpm dev` runs the CLI from source; `pnpm start` runs the bundled CLI at
+  `dist/bundle/cli.js`, also used by the installed `dscode` command.
+
+The original unbundled CLI is retained at `dist/cli.js`. Run it with
+`pnpm start:unbundled` or `node dist/cli.js` for debugging or comparison.
+Both variants use the same settings, credentials, sessions, and runtime behavior.
+The CLI bundle includes pi's JavaScript dependencies for faster interactive startup;
+native modules and assets remain installed dependencies. See [CLI bundling](docs/CLI_BUNDLING.md).
 
 Additional validation commands:
 
