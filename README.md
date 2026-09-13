@@ -14,7 +14,7 @@
   <a href="docs/COMPARISON.en.md">Comparison</a>
 </p>
 
-DSCode is an opinionated coding-agent runtime with DeepSeek V4 Flash as its economical default and
+DSCode is an opinionated coding-agent runtime with DeepSeek Flash as its economical default and
 built-in support for Codex, OpenAI, Anthropic, OpenRouter, Z.AI, Kimi, MiniMax, xAI, and OpenCode Zen Go. It combines
 provider-aware model routing with local sessions, safe patching, parallel agents, OS sandboxing, and
 transparent usage reporting.
@@ -28,7 +28,7 @@ while letting each repository task use the model capabilities it actually needs.
 
 ## Why DSCode
 
-- **DeepSeek-first, not DeepSeek-only.** DeepSeek V4 Flash remains the default, with its dedicated
+- **DeepSeek-first, not DeepSeek-only.** DeepSeek Flash remains the default, with its dedicated
   Responses adapter, native free-form `apply_patch`, and optional server-side Web Search. Switch to
   Codex, OpenAI, Anthropic, OpenRouter, Z.AI, Kimi, MiniMax, Grok, or OpenCode Zen Go without changing tools or sessions.
 - **Vision when the model supports it.** Paste an image in the TUI or pass an image as `@file`; models
@@ -365,8 +365,7 @@ GitHub Release and publishes the full and lean Docker Hub images after CI passes
 
 ## Current boundaries
 
-- DeepSeek V4 Flash remains text-only. Select a vision-capable model for screenshots and other image
-  inputs.
+- DeepSeek Flash accepts image input; DeepSeek V4 Pro remains text-only.
 - ChatGPT-plan access follows the models, limits, and workspace permissions available to the signed-in
   account; OpenAI API-key usage is billed separately by the API platform.
 - The VS Code extension is a local integration and is not published to the Marketplace yet.

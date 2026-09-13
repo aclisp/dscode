@@ -14,7 +14,7 @@
   <a href="docs/COMPARISON.md">产品对比</a>
 </p>
 
-DSCode 是一套有明确取舍的 coding-agent runtime：以经济的 DeepSeek V4 Flash 为默认模型，并
+DSCode 是一套有明确取舍的 coding-agent runtime：以经济的 DeepSeek Flash 为默认模型，并
 内置支持 Codex、OpenAI、Anthropic、OpenRouter、Z.AI、Kimi、MiniMax、xAI 和 OpenCode Zen Go。它把
 provider-aware 路由、本地会话、安全 patch、并行 agent、OS sandbox，以及用量统计组合在一起。
 
@@ -27,7 +27,7 @@ DSCode 不追求在功能数量上超过所有通用 coding agent；目标是保
 
 ## 为什么选择 DSCode
 
-- **DeepSeek 优先，但不限于 DeepSeek。** DeepSeek V4 Flash 仍是默认模型，继续使用专用 Responses
+- **DeepSeek 优先，但不限于 DeepSeek。** DeepSeek Flash 仍是默认模型，继续使用专用 Responses
   adapter、原生 freeform `apply_patch` 和服务端 Web Search；也可以在不改变工具与会话的情况下
   切换到 Codex、OpenAI、Anthropic、OpenRouter、Z.AI、Kimi、MiniMax、Grok 或 OpenCode Zen Go。
 - **模型支持时可识图。** 可在 TUI 粘贴图片或通过 `@file` 传入；GPT-5.6 等模型能检查截图，
@@ -327,7 +327,7 @@ Release 并发布 full 和 lean Docker Hub 镜像。详细流程见 [Releasing D
 
 ## 当前边界
 
-- DeepSeek V4 Flash 仍只接受文本输入；截图等图片任务需要切换到支持视觉的模型。
+- DeepSeek Flash 支持图片输入；DeepSeek V4 Pro 仍只接受文本输入。
 - ChatGPT 套餐登录受账号可用模型、用量限制和 workspace 权限约束；OpenAI API key 的用量由 API
   平台单独计费。
 - VS Code 扩展是本地集成，尚未发布到 Marketplace。
